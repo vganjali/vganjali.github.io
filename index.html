@@ -1,106 +1,926 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<title>.VG.</title>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-:root {
-  --color-1: darkcyan;
-  --color-2: goldenrod;
-  --color-3: mediumorchid;
-}
-* {
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Handlee&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Crimson&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=PT+Sans&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=WorkSans&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Neuton&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Macondo&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=EBGaramond&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=CrimsonPro&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Slab&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=PT+Serif&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/all.min.css">
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/pcooksey/bibtex-js@1.0.0/src/bibtex_js.js"></script>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3.0.1/es5/tex-mml-chtml.js">
+  </script>
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']]
+      }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+  </script>
+  <title>.VG.</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    :root {
+      --color-1: deepskyblue;
+      --color-2: lightgray;
+      --color-3: mediumorchid;
+      --color-4: whitesmoke;
+      --color-5: rgb(250, 250, 250);
+      --color-6: ivory;
+      --color-7: darkmagenta;
+      --color-8: darkcyan;
+      --color-9: dimgrey;
+      --color-0: grey;
+    }
+
+    /** {
   box-sizing: border-box;
-}
+}*/
 
-body {
-  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-  max-width: 1000px;
-  margin: auto;
-}
+    body {
+      /* font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; */
+      /*font-family: 'Work Sans', sans-serif;*/
+      font-family: 'Nunito', sans;
+      color: black;
+      min-width: 800px;
+      margin: auto;
+      padding: 0 1em;
+      caret-color: transparent;
+    }
 
-/* Style the header */
-header {
-  display: inline-flex;
-  padding: 20px;
-  text-align: left;
-  font-family: Georgia, 'Times New Roman', Times, serif;
-  font-size: 35px;
-  color: var(--color-1);
-}
-header h2 {
-  padding-left: 1em;
-}
-header img {
-  max-width: 200px;
-  max-height: 200px;
-  object-fit: contain;
-  clip-path: circle();
-  background-color: var(--color-2);
-  padding: 4px;
-  border-radius: 50%;
-}
+    /* Style the header */
+    header {
+      width: 100%;
+      display: flex;
+      flex-wrap: nowrap;
+      padding-top: 20px;
+      text-align: left;
+      font-family: Georgia, 'Times New Roman', Times, serif;
+      font-family: 'Macondo', cursive;
+      font-size: large;
+      color: black;
+      justify-content: space-between;
+    }
 
-/* Container for flexboxes */
-section {
-  background-color: white;
-}
-section h2 {
-  display: -webkit-flex;
-  display: flex;
-  font-family: Georgia, 'Times New Roman', Times, serif;
-  font-size: larger;
-  color: var(--color-1);
-}
+    header h2 {
+      padding-left: 1em;
+    }
 
-section p {
-  padding-left: 10em;
-}
+    header h3 {
+      color: var(--color-9);
+    }
 
-/* Style the navigation menu */
-nav {
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
-  background: white;
-  padding: 20px;
-}
+    #frame {
+      width: 200px;
+      height: 200px;
+      object-fit: none;
+      clip-path: circle();
+      background-color: var(--color-2);
+      padding: 2px;
+      border-radius: 50%;
+    }
 
-/* Style the list inside the menu */
-nav ul {
-  list-style-type: none;
-  padding: 0;
-}
+    header img {
+      max-width: 190px;
+      max-height: 190px;
+      object-fit: contain;
+      clip-path: circle();
+      background-color: white;
+      padding: 5px;
+      border-radius: 50%;
+    }
 
-/* Style the footer */
-footer {
-  font-family: Georgia, 'Times New Roman', Times, serif;
-  font-size: smaller;
-  padding: 10px;
-  text-align: center;
-  color: var(--color-1);
-}
+    figure {
+      margin: 4px;
+    }
 
-/* Responsive layout - makes the menu and the content (inside the section) sit on top of each other instead of next to each other */
-@media (max-width: 600px) {
+    figcaption {
+      font-size: smaller;
+      text-align: center;
+      font-style: italic;
+      color: var(--color-9);
+    }
+
+    .header {
+      min-width: 500px;
+      flex: 100%;
+      justify-content: space-between;
+    }
+
+    .header>h1 {
+      margin-bottom: 0;
+      padding-left: 10px;
+    }
+
+    .header>.nav {
+      display: flex;
+      flex-wrap: nowrap;
+      padding-left: 1em;
+      justify-content: space-between;
+    }
+
+    .header>.nav>.about {
+      font-family: 'Handlee', cursive;
+      margin-right: 1em;
+      flex-direction: column;
+      display: flex;
+      align-items: flex-start;
+    }
+
+    .header>.nav>.about ul {
+      background-color: var(--color-4);
+      border-radius: 20px;
+      list-style-type: none;
+      padding: 0;
+      text-align: center;
+      display: flex;
+    }
+
+    .header>.nav>.about ul li {
+      color: black;
+      padding: 3px 0 0 0;
+      text-decoration: none;
+      margin: 0;
+    }
+
+    .header>.nav>.about ul li a {
+      color: black;
+      text-decoration: none;
+      padding: 0px 10px;
+      font-size: x-large;
+      background-color: var(--color-4);
+      padding: 3px 10px 0 10px;
+      border-radius: 20px;
+    }
+
+    .header>.nav>.about ul li a:hover {
+      background-color: var(--color-1);
+      color: white;
+    }
+
+    .header>.nav>p {
+      font-family: 'Handlee', cursive;
+      margin-right: 1em;
+    }
+
+    .header>.nav>ul {
+      /*font-family: Georgia, 'Times New Roman', Times, serif;*/
+      font-family: 'PT Serif', serif;
+      list-style-type: none;
+      padding: 0;
+      font-size: large;
+      text-align: right;
+    }
+
+    .header>.nav>ul li {
+      margin-top: 5px;
+    }
+
+    .header>.nav>ul li a {
+      background-color: var(--color-4);
+      border-radius: 10px 0 0 10px;
+      color: black;
+      padding: 1px 4px 1px 10px;
+      border-right: var(--color-1) 2px solid;
+      text-decoration: none;
+    }
+
+    .header>.nav>ul li a:hover {
+      background-color: var(--color-1);
+      color: white;
+    }
+
+    hr {
+      color: lightgray;
+      height: 0px;
+      border-width: 1px;
+      border-style: solid;
+    }
+
+    /* Container for flexboxes */
+    section {
+      display: flex;
+      flex-wrap: wrap;
+      background-color: white;
+      margin: 1em 0;
+      align-items: flex-end;
+      width: 100%;
+      justify-content: flex-start;
+    }
+
+    section h1 {
+      display: flex;
+      /* font-family: Georgia, 'Times New Roman', Times, serif; */
+      font-family: 'PT Serif', serif;
+      font-weight: normal;
+      font-size: large;
+      color: black;
+      padding: 2px 1em 0 1em;
+      background-color: var(--color-4);
+      margin: 0;
+      border-radius: 10px 10px 0 0;
+    }
+
+    section div {
+      /*background-color: whitesmoke;*/
+      border-top: 1px var(--color-2) solid;
+      flex: 100%;
+      width: 100%;
+      flex-wrap: wrap;
+      flex-direction: row;
+    }
+
+    section p {
+      /*font-style: italic;*/
+      padding: 0 1em;
+    }
+
+    .block {
+      background-color: var(--color-5);
+      border-radius: 10px;
+      border-style: none;
+      display: flex;
+      flex-wrap: nowrap;
+      margin: 0.5em;
+      flex: content;
+      width: auto;
+      flex-grow: 0;
+      font-size: medium;
+    }
+
+    .block div {
+      display: flex;
+      flex-direction: row;
+      border-style: none;
+      width: auto;
+      font-size: medium;
+    }
+
+    div.block div {
+      display: inline;
+    }
+
+    div.block div div {
+      display: table;
+    }
+
+    div.block div div p {
+      display: table-cell;
+      vertical-align: top;
+      padding: 0.5em;
+      margin: 0.5em;
+    }
+
+    div.block div div figure {
+      display: table-cell;
+      text-align: center;
+      vertical-align: top;
+      padding: 0.5em;
+    }
+    div.block div div figure figcaption {
+      text-align: center;
+      width: auto;
+    }
+    .block ul {
+      list-style-type: circle;
+      padding-left: 1.5em;
+      padding-right: 1em;
+    }
+
+    .block h1 {
+      align-items: center;
+      border-radius: 0 10px 10px 0;
+      border-left: deepskyblue 2px solid;
+      padding: 1em 2px;
+      writing-mode: vertical-rl;
+      transform: rotate(-180deg);
+      justify-content: flex-end;
+      font-size: small;
+    }
+
+    #skills>.block ul {
+      font-size: small;
+    }
+
+    #skills>.block h1 {
+      color: black;
+    }
+
+    #research>.block p {
+      font-size: medium;
+    }
+
+    #research.block h1 {
+      color: black;
+    }
+
+    div#code.block h1 {
+      border-color: gold;
+    }
+
+    div#software.block h1 {
+      border-color: lime;
+    }
+
+    div#graphic.block h1 {
+      border-color: magenta;
+    }
+
+    div#hardware.block h1 {
+      border-color: deepskyblue;
+    }
+
+    div#other.block h1 {
+      border-color: purple;
+    }
+
+    /* Style the navigation menu */
+    nav {
+      font-size: large;
+      text-align: right;
+      padding: 0px;
+    }
+
+    /* Style the list inside the menu */
+    nav ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    nav li {
+      background-color: aquamarine;
+      color: red;
+      font-size: 200;
+    }
+
+    /* Style the footer */
+    footer {
+      /* font-family: Georgia, 'Times New Roman', Times, serif; */
+      border-top: 1px var(--color-2) solid;
+      font-family: 'Handlee', cursive;
+      font-size: smaller;
+      padding: 10px;
+      text-align: center;
+      color: var(--color-9);
+    }
+
+    html {
+      -webkit-text-size-adjust: none;
+      /* Prevent font scaling in landscape */
+    }
+
+    /* Responsive layout - makes the menu and the content (inside the section) sit on top of each other instead of next to each other */
+    /*@media (max-width: 600px) {
   section {
     -webkit-flex-direction: column;
     flex-direction: column;
   }
+}*/
+  @media (max-width: 1280px) {
+  div.block div div {
+    display: flex;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+    align-items: center;
+  }
 }
-</style>
+  </style>
 </head>
-<body>
-<header>
-  <h2>Under concstruction!</h2>
-</header>
 
-<footer>
-  <hr>
-  <p>Designed and developed by Vahid Ganjalizadeh. Updated on Oct '22.</p>
-</footer>
+<body>
+  <header>
+    <div>
+      <div id="frame"><img src="images/profile.jpg" alt="Vahid"></div>
+    </div>
+    <div class="header">
+      <h1>Vahid Ganjalizadeh</h1>
+      <div class="nav">
+        <div class="about">
+          <p>A Ph.D. stduent at UCSC in Electrical and Computer Engineering.
+            Enjoys working with photonics and codes to do things!
+          </p>
+          <ul>
+            <li><a href="https://github.com/vganjali"><i class="fa-brands fa-github"></i></a></li>
+            <li><a href="https://orcid.org/0000-0002-8768-3654"><i class="fa-brands fa-orcid"></i></a></li>
+            <li><a href="https://scholar.google.com/citations?user=jXkW8RMAAAAJ&hl=en&oi=ao"><i
+                  class="fa fa-graduation-cap"></i></a></li>
+            <li><a href="mailto:vahid.ganjalizadeh@gmail.com" target="_top"><i class="fa fa-envelope"></i></a></li>
+          </ul>
+        </div>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#research">Research</a></li>
+          <li><a href="#publications">Publications</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <section id="about">
+    <h1>
+      About me
+    </h1>
+    <div></div>
+    <div class="block" style="background: none;">
+      <div>
+      <p>
+        I'm a last year ECE Ph.D. candidate at UCSC. I did my bachelors and masters at <em>University of Tabriz</em> in
+        my beautiful hometown, <a href="https://en.wikipedia.org/wiki/Tabriz">Tabriz</a>. I joined <a
+          href="https://photon.soe.ucsc.edu">Applied Optics</a> group in <em>Jack Basking School of Engineering
+          (JBSOE)</em> under supervision of Prof. Holger Schmidt.
+      </p>
+      <p>
+        I have been lucky studying at UCSC with it's gorgeous nature.
+        When I don't research, I enjoy being outdoor and shooting photos. Check my small <a href="#gallery">gallery section</a> below.
+      </p>
+      <p>
+        Working with lasers and light in the dark is an irony and contrast to find new things!
+      </p>
+      <figure style="text-align: center; width: auto;">
+        <img src="images/lab-time.jpg" alt="lab time" width="700px">
+        <figcaption>a typical day (night?) in the lab</figcaption>
+      </figure>
+    </div>
+  </div>
+  </section>
+  <section id="skills" style="font-size: smaller;">
+    <h1>Skills</h1>
+    <div></div>
+    <div class="block" id="code">
+      <h1>Programming</h1>
+      <ul>
+        <li>Python</li>
+        <li>MATLAB</li>
+        <li>Verilog/VHDL/HLS</li>
+        <li>C/C++</li>
+        <li>C#</li>
+        <li>Bash</li>
+        <li>Lisp</li>
+      </ul>
+    </div>
+    <div class="block" id="code">
+      <h1>Python</h1>
+      <ul>
+        <li>Numpy</li>
+        <li>Scipy</li>
+        <li>Pandas</li>
+        <li>Matplotlib</li>
+        <li>Tensorflow</li>
+        <li>Scikit-Learn</li>
+        <li>Scikit-Image</li>
+        <li>HoloViews</li>
+        <li>Socket</li>
+        <li>Concurrent</li>
+        <li>Multiprocessing</li>
+      </ul>
+    </div>
+    <div class="block" id="software">
+      <h1>Simulation</h1>
+      <ul>
+        <li>FIMMWAVE/FIMMPROP</li>
+        <li>Simulink</li>
+        <li>Code V</li>
+        <li>ANSYS</li>
+        <li>COMSOL</li>
+      </ul>
+    </div>
+    <div class="block" id="graphic">
+      <h1>CAD/EAD</h1>
+      <ul>
+        <li>AutoCAD</li>
+        <li>Altium Designer</li>
+        <li>Eagle</li>
+        <li>KiCad</li>
+        <li>Inventor</li>
+        <li>Fusion 360</li>
+      </ul>
+    </div>
+    <div class="block" id="hardware">
+      <h1>Embedded HW</h1>
+      <ul>
+        <li>Google Coral</li>
+        <li>Xilinx FPGA</li>
+        <li>Raspbery Pi</li>
+        <li>Arduino</li>
+        <li>PIC</li>
+        <li>AXI-4</li>
+        <li>Ethernet (TCP/IP)</li>
+        <li>SPI/I2C</li>
+      </ul>
+    </div>
+    <div class="block" id="code">
+      <h1>Image [Processing]</h1>
+      <ul>
+        <li>Andor Zyla sCMOS</li>
+        <li>OpenCV/CV2</li>
+        <li>PIL</li>
+        <li>Scikit-Image</li>
+        <li>ImageJ</li>
+      </ul>
+    </div>
+    <div class="block" id="software">
+      <h1>IDE</h1>
+      <ul>
+        <li>VS Code</li>
+        <li>Jupyter NB/Lab</li>
+        <li>Google Colab</li>
+        <li>Visual Studio</li>
+        <li>Eclipse</li>
+        <li>MPLAB</li>
+        <li>Spyder</li>
+      </ul>
+    </div>
+    <div class="block" code="hardware">
+      <h1>GUI/Instrumentation</h1>
+      <ul>
+        <li>LabView</li>
+        <li>PySide/PyQt</li>
+        <li>DearPyGUI</li>
+        <li>Tk/Tkinter</li>
+        <li>Plotly Dash</li>
+        <li>MATLAB App Designer</li>
+        <li>Spyder</li>
+        <li>Visa</li>
+      </ul>
+    </div>
+    <div class="block" id="graphic">
+      <h1>Graphics/Design</h1>
+      <ul>
+        <li>Adobe Illustrator</li>
+        <li>Adobe Photoshop</li>
+        <li>Inkscape</li>
+        <li>GIMP</li>
+        <li>Blender</li>
+      </ul>
+    </div>
+    <div class="block" id="hardware">
+      <h1>Optics/Fabrication</h1>
+      <ul>
+        <li>Si-photonic chip characterization</li>
+        <li>Optical setup design and build</li>
+        <li>PDMS optofluidic chip fab.</li>
+        <li>3D printing</li>
+        <li>PCB design and assembly</li>
+      </ul>
+    </div>
+    <div class="block" id="other">
+      <h1>Others</h1>
+      <ul>
+        <li>Git/Github</li>
+        <li>Linux/Mac OS</li>
+        <li>MS Windows</li>
+        <li>HTML/CSS</li>
+        <li>PyPI</li>
+        <li>LaTex</li>
+        <li>Teamwork</li>
+        <li>Brainstorming</li>
+      </ul>
+    </div>
+
+  </section>
+  <section id="research">
+    <h1>Research</h1>
+    <div></div>
+    <div class="block">
+      <h1>MMI Mode Imaging</h1>
+      <div>
+        <div>
+          <p>
+            In this project, I have characterized various single-layer <em>SiO2</em> low-index waveguides fabricated
+            on anti-resonant reflecting optical waveguide (ARROW) layer to measure the quality of multi-spot
+            interference pattern. To help with batch characterization, I have built a mode-imaging setup with a
+            <em>C#</em> GUI software, where the top-down as well as side facet live images are displayed using two
+            CMOS cameras.
+            The software is also capable of communicating with <a
+              href="https://contentnktphotonics.s3.eu-central-1.amazonaws.com/SuperK-EXTREME/SuperK%20EXTREME%20Product%20Guide-20210406%20R1.0.pdf">NKT
+              SuperK EXTREME supercontinuum white light laser</a>
+            and <a href="https://www.nktphotonics.com/products/supercontinuum-white-light-lasers/superk-select/">SuperK
+              SELECT</a> to tune and scan wavelengths.
+          </p>
+          <figure style="text-align: center; width: 320px;">
+            <img src="images/mode-imaging-setup.jpg" alt="mode-imaging-setup" width="320px">
+            <figcaption>Fig.1 mode imaging setup</figcaption>
+          </figure>
+          <p>
+            To analyze recorded mode images, I developed an image processing program (<a href="https://github.com/vganjali/Mode-Analyzer">Mode-Analyzer</a>) to convert multi-spot facet images into a 1D array
+            and then extract multiple features such as full-width-half-maximum (<em>FWHM</em>), peak-to-valley (<em>P2V</em>), etc.
+            The program is written in <em>Python</em> and the GUI is developed in <em>Tkinter</em>.
+          </p>
+          <figure style="text-align: center; width: 360px;">
+            <img src="images/mode-analyzer.jpg" alt="mode-analyzer" width="360px">
+            <figcaption>Fig.2 mode analyzer software</figcaption>
+          </figure>
+        </div>
+        <div>
+          <figure style="text-align: center; width: 640px;">
+            <img src="images/mode-imaging-scheme.jpg" alt="mode-imaging-scheme" align="center" width="640px">
+            <figcaption>Fig.3 wavelength scanning scheme</figcaption>
+          </figure>
+          <div style="display: table-cell; vertical-align: top; width: auto; padding-left: 0.5em;">
+            Communication with NKT WLS provides the ability to scan through wavelengths and find the wavelengths where a clear MMI spot
+            pattern forms.
+            The scan is plotted in real-time as below:
+            <ol style="margin: 0.5em 0.5em;">
+              <li>NKT SelectK is being scanned within $\lambda_0$ to $\lambda_N$ with $N$ steps and 200ms delay</li>
+              <li>a frame from facet CMOS camera captured</li>
+              <li>inside a defined box (ROI) vertical integral of all pixel values are calculated and reduced to a 1D
+                array ($L$)</li>
+              <li>the calculated 1D array at $\lambda_i$ is assigned to the scan 2D array at column $i$
+                $$\displaylines{
+                \begin{aligned}
+                {\color{blue} for}\ & i\ {\color{blue}in}\ {\color{purple}range}({\color{tomato}N}):\\
+                &frame = {\color{blue}camera}.{\color{purple}grabframe}()\\
+                &{ L =
+                {\color{purple}sum}(frame[{\color{tomato}roi}[0]:{\color{tomato}roi}[1],{\color{tomato}roi}[2]:
+                {\color{tomato}roi}[3]],{\color{blue}axis}=1)}\\
+                &{ scan[i,:] = L}\\
+                &{{figure}.{\color{purple}draw}()}
+                \end{aligned}}$$</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="block">
+      <h1>PCWA-Wavelet Event Detector</h1>
+      <div>
+        <div>
+          <p>
+            Optofluidic chips are developed to detect individual flowing targets within a fluidic medium. 
+            Integration of photonics and microfluidics optofluidics well-suited for single-molecule detection. 
+            In this research, I developed a novel event detection algorithm based on continuous wavelet transform (<em>CWT</em>)
+            which is a powerful multiscale data analysis tool. A custom designed mother wavelet function is designed and applied
+            on the raw binned input signal from single-photon-counting-module (<em>SPCM</em>) to improve detection rate and accuracy.
+            The algorithm is highly parallel and can run much faster than previous CWT peak-finder algorithms, which can run in real-time
+            for inline event detection and monitoring [<a href="https://www.nature.com/articles/s41467-022-28703-z">ref</a>].
+          </p>
+          <figure style="text-align: center; width: 600px;">
+            <img src="images/pcwa-1.jpg" width="600px" alt="PCWA on single peak events">
+            <figcaption>Fig.4 PCWA algorithm applied on single-peak events. For caption check the main article 
+              [<a href="https://www.mdpi.com/2072-666X/11/4/349">ref</a>]</figcaption>
+          </figure>
+        </div>
+        <div>
+          <p>
+            PCWA algorithm have been used in various event detection applications in our lab. I have implemented this 
+            algorithm in a more complicated platform where real-time detection of events and concentration calculation 
+            is necessary. There is GUI (using <a href="https://github.com/hoffstadt/DearPyGui">DearPyGUI</a>) developed to have inputs read from the user and visualize real-time insight about 
+            running experiment.
+          </p>
+          <figure style="text-align: center; width: 400px;">
+            <video width="400px" height="auto" autoplay muted playsinline loop>
+              <source src="images/sma-video.mp4" type="video/mp4">
+            </video>
+            <figcaption>Vid.1 screen record of SMA software for real-time event detection and target analysis.</figcaption>
+          </figure>
+        </div>
+        </p>
+      </div>
+    </div>
+    <div class="block">
+      <h1>PDMS Fabrication</h1>
+      <div>
+        <div>
+          <figure style="text-align: center; width: 260px;">
+            <img src="images/pdms-fabricated-devices.jpg" width="260px" alt="Fabricated PDMS device">
+            <figcaption>Fig.5 fabricated PDMS optofluidic device used for bio-sensing</figcaption>
+          </figure>
+          <p style="padding: 0 0.5em;">
+          </p>
+          <figure style="text-align: center; width: 300px;">
+            <img src="images/pdms-device.jpg" width="300px" alt="Fabricated PDMS device">
+            <figcaption>Fig.6 example of PDMS optofluidic device used for multiplexed detection
+              [<a href="https://opg.optica.org/ol/fulltext.cfm?uri=ol-43-18-4425&id=396887">ref</a>]</figcaption>
+          </figure>
+          <p>
+            Polydimethylsiloxane (<em>PDMS</em>) is a biocompatible, flexible transparent elastomer which have been used in microfluidics 
+            and bio-sensors for decades. Desirable properties of this material for microfluidic applications combined with the optical properties 
+            control during fabrication, promotes PDMS as a favorable material for optofluidics. I have gained skills and experiences fabricating optofluidic 
+            devices using in-house <a href="https://cleanroom.soe.ucsc.edu/microfluidics">cleanroom facility</a> at <em>BSOE</em>.
+            I use AutoCAD for photomask design and to ease the polyline verification for comercial mask-writer instruments, 
+            I have developed a <em>lisp</em> script called <a href="https://www.nature.com/articles/s41467-022-28703-z">Poly Hatch</a>.
+          </p>
+        </div>
+        </p>
+      </div>
+    </div>
+    <div class="block">
+      <h1>3D Hydrodynamic Focusing</h1>
+      <div>
+        <div>
+          <p>
+            Hydrodynamic focusing (HDF) in fluidics help to confine the sample stream by introducing sheath streams
+            surrounding it.
+            With the help of sacrifical layers, 3D-HDF integration was achieved within the ARROW optofluidic chip.
+          </p>
+          <figure style="text-align: center; width: 360px;">
+            <img src="images/3dhdf-concept.jpg" width="360px" alt="3D-HDF concept">
+            <figcaption>Fig.7 Hydrodynamic focusing occurs when sample fluid (drawn in solid blue) is squeezed and
+              sheathed from (a) two dimensions (horizontal focusing) or (b) three dimensions (horizontal and
+              vertical focusing) by a buffer fluid (drawn in striped red), controlling the position of sample fluid in
+              the fluid channel [<a href="https://www.mdpi.com/2072-666X/11/4/349">ref</a>]</figcaption>
+          </figure>
+          <p style="padding: 0 0.5em;">
+          </p>
+          <figure style="text-align: center; width: 420px;">
+            <img src="images/3dhdf-chip-mmi.jpg" width="420px" alt="3D-HDF Chio MMI">
+            <figcaption>Fig.8 (a) Top down schematic of the center of the optofluidic chip. Fluid flows from left to right 
+              in the dark blue liquid-core channels, passing through the focusing junction before interacting with the 
+              light delivered by the light blue solid-core waveguides. (b) Photograph of on-chip multi-mode interference 
+              excitation waveguide (MMI) multi-spot excitation scheme using fluorescent dye and DI water. 
+              [<a href="https://www.mdpi.com/2072-666X/11/4/349">ref</a>]</figcaption>
+          </figure>
+        </div>
+        <div>
+          <figure style="text-align: center; width: 560px;">
+            <img src="images/3dhdf-chip-mount.jpg" width="560px" alt="3D-HDF 3D Printed Chip Mount">
+            <figcaption>Fig.9 3D printed chip mount for 3D-HDF chips providing sealed access to 6 channels. I used 
+              <em>Autodesk's Inventor</em> software for drafting the 3D model and printer using the <em>Formlabs SLA 
+                3D printer</em> available at <em>UCSC BELS</em>.</figcaption>
+          </figure>
+          <div style="display: table-cell; vertical-align: top; width: auto; padding-left: 0.5em">
+            The regular way of connecting outlet reservoirs for ARROW chips (gluing <em>brass cylinders</em>) to 
+            vacuum line becomes challenging when we 
+            deal with multiple outlet channels (sample channel outlet + buffer channels outlet).
+            To solve this, I designed and made a <em>3D printed</em> chip mount with following goals in mind:
+            <ul style="margin: 0.5em 0.5em;">
+              <li>should hold the chip secure during the experiment</li>
+              <li>should seal both inlet and outlet channels to prevent leakage and bubble formation</li>
+              <li>should have minimal footprint and provide enough room for fiber, and objective lenses to couple to the chip</li>
+              <li>should be adjustable and tolerate possible chip cleaving errors</li>
+            </ul>
+          </div>
+        </div>
+        </p>
+      </div>
+    </div>
+    <div class="block">
+      <h1>AI-Accelerated Inferencing</h1>
+      <div>
+        <div>
+          <p>
+            In this project, I have developed a <em>Deep-Learning</em> model to improve fluorescent event detection accuracy. I use 
+            <em>TensorFlow</em> library in Python to design, compile, and train a neural-network model for event 
+            classification purpose. The trained model is then transferred to the <em>Edge-TPU</em> accelerator hardware 
+            (<a href="https://coral.ai/products/dev-board/">Google Coral Dev Board</a>) for real-time inferencing. 
+            I built the quantization-aware model from the scratch with required considerations to be compatible with Coral Dev Board. 
+            I also developed a pipeline to automate the process of dataset preparation for traning step. A Plotly Dash dashboard 
+            was implemented for real-time monitoring of results. This work has been submitted to <em>Scientific Reports</em> and 
+            we more details will be provided once the paper gets published.
+          </p>
+          <figure style="text-align: center; width: 160px;">
+            <img src="images/coral-dev-board.jpg" width="160px" alt="Coral-Dev-Board">
+            <figcaption>Fig.10 <em>Google Coral Dev Board</em> as a AI-specific 
+            DNN accelerator</figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+
+  </section>
+  <bibtex src="mypublications_doi_url.bib"></bibtex>
+
+  <div class="bibtex_structure" style="width: auto;">
+    <div class="sort year" extra="DESC number" style="border-style:none; margin-top:1em; padding-left:1em; width: auto;">
+      <div class="templates" style="border-style:none;"></div>
+    </div>
+  </div>
+  <div class="bibtex_template" style="border-style: none; font-family:PT Serif; margin-left: 4em; width: auto;">
+    -<span class="year" style="font-weight: normal; margin-left: -4em; padding-left: 0.5em;"></span>:
+    <span class="if title"
+      style="font-weight: normal; font-style: italic; color:black; background-color: mintcream; border-radius:10px;">
+      "<span class="title"></span>"
+    </span><br />
+    <span class="author"></span>
+    <span class="if journal" style="font-style: italic; color: grey;">
+      -<span class="journal"></span>
+      <span class="if publisher" style="color: grey; font-style: italic;">
+        (<span class="publisher"></span>)
+      </span>
+    </span>
+    <span class="if !journal">
+      <span class="if booktitle" style="font-style: italic;">
+        -<span class="booktitle" style="white-space: pre; color: grey;"></span>
+        <span class="if organization" style="color: gray; font-style: italic;">
+          (<span class="organization"></span>)
+        </span>
+      </span>
+    </span>
+    <span class="if doi" style="border-style: none;">
+      <span class="if url">
+        <a class="url">
+          (<span class="doi"></span>)
+        </a>
+      </span>
+      <span class="if !url">
+        (doi: <span class="doi"></span>)
+      </span>
+    </span>
+  </div>
+  <section id="publications">
+    <h1>Publications</h1>
+    <div>
+      <div id="bibtex_display" style="border-style: none;"></div>
+    </div>
+  </section>
+  <section id="gallery">
+    <h1>
+      Photo Gallery
+    </h1>
+    <div></div>
+    <div class="block" style="background: black; overflow-x: scroll; display: block;">
+      <div>
+      <div style="display: block;">
+      <p>
+      </p>
+      <figure style="text-align: center; width: unset;">
+        <img src="images/gallery/img1.jpg" alt="mode-imaging-setup" height="280px">
+        <figcaption></figcaption>
+      </figure>
+      <p>
+      </p>
+      <figure style="text-align: center; width: auto;">
+        <video width="auto" height="280px" autoplay muted playsinline loop>
+          <source src="images/gallery/vid3.mp4" type="video/mp4">
+        </video>
+        <figcaption></figcaption>
+      </figure>
+      <p>
+      </p>
+      <figure style="text-align: center; width: auto;">
+        <img src="images/gallery/img2.jpg" alt="mode-imaging-setup" height="280px">
+        <figcaption></figcaption>
+      </figure>
+      <p>
+      </p>
+      <figure style="text-align: center; width: auto;">
+        <img src="images/gallery/img4.jpg" alt="mode-imaging-setup" height="280px">
+        <figcaption></figcaption>
+      </figure>
+      <p>
+      </p>
+      <figure style="text-align: center; width: auto;">
+        <img src="images/gallery/img5.jpg" alt="mode-imaging-setup" height="280px">
+        <figcaption></figcaption>
+      </figure>
+      <p>
+      </p>
+      <figure style="text-align: center; width: auto;">
+        <img src="images/gallery/img6.jpg" alt="mode-imaging-setup" height="280px">
+        <figcaption></figcaption>
+      </figure>
+      <p>
+      </p>
+      <figure style="text-align: center; width: auto;">
+        <img src="images/gallery/img8.jpg" alt="mode-imaging-setup" height="280px">
+        <figcaption></figcaption>
+      </figure>
+      <p>
+      </p>
+      <figure style="text-align: center; width: auto;">
+        <img src="images/gallery/img9.jpg" alt="mode-imaging-setup" height="280px">
+        <figcaption></figcaption>
+      </figure>
+      <p>
+      </p>
+      <figure style="text-align: center; width: auto;">
+        <img src="images/gallery/img10.jpg" alt="mode-imaging-setup" height="280px">
+        <figcaption></figcaption>
+      </figure>
+      <p>
+      </p>
+      <figure style="text-align: center; width: auto;">
+        <img src="images/gallery/img11.jpg" alt="mode-imaging-setup" height="280px">
+        <figcaption></figcaption>
+      </figure>
+    </div>
+    </div>
+  </div>
+  </section>
+  <footer>
+    <p>Designed and developed by Vahid Ganjalizadeh. Updated on Oct '22.</p>
+  </footer>
 
 </body>
-</html>
 
+</html>
