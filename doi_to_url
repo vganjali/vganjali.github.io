@@ -1,0 +1,26 @@
+#! /bin/python3
+import sys
+filename = sys.argv[1]
+
+with open(filename,'r') as fi:
+    with open(filename.split(".")[0]+"_url.bib",'w') as fo:
+        for l in fi.readlines():
+            if l.strip()[:3] == 'doi':
+                _doi, _add, _end = l.index("doi"), l.index("{")+1, l.index("}")
+                if l[_end:_end+2] != "},":
+                    l = l.replace("}","},")
+                    # print(l)
+                    # print(l[:l.index("doi")]+f"url = {}")
+                    _url = l.replace("},","}")
+                else:
+                    _url = l
+                fo.write(l)
+                _url = _url.replace("doi","url")
+                _url = _url[:_add]+"https://doi.org/"+_url[_add:]
+                # print(_url)
+                fo.write(_url)
+            else:
+                # print(l)
+                fo.write(l)
+        
+        
